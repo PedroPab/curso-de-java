@@ -40,7 +40,7 @@ function areaTriangulo(base, altura){
     return (base * altura) / 2;
 } 
 
-function alturaIsosceles(lado0, lado1, base){//si no vas a mandarle parametro borralos junto con lo comentarios de abajo 
+function alturaIsosceles(lado0, lado1, base){//si no vas a mandarle parametro borralos, junto con los comentarios de abajo 
     // const lado0 , inputValue0 = parseInt(document.getElementById("inputTriangulo0").value); //lado0
     // const lado1 , inputValue1 = parseInt(document.getElementById("inputTriangulo1").value);// lado1
     // const base , inputValue2 = parseInt(document.getElementById("inputTriangulo2").value);//base 

@@ -8,3 +8,10 @@ en este repositorio voy a empezar con el curso  de JavaScript de Platzi
 - Segundo paso: implementar la fórmulas en JavaScript 
 - Tercer paso: crear funciones
 - Cuarto paso: integrar JS con HTML
+
+## Taller #1: porsentajes y descuntos 
+
+- Primer paso: definir las fórmulas
+- Segundo paso: implementar la fórmulas en JavaScript 
+- Tercer paso: crear funciones
+- Cuarto paso: integrar JS con HTML
