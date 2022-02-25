@@ -56,6 +56,21 @@ function alturaIsosceles(lado0, lado1, base){//si no vas a mandarle parametro bo
         console.log("no es un triangulo isosceles, corrige los lados del triangulo");
     }
 }
+
+function alturaTriangulo(lado0, lado1){
+    //como saber la altura de cualquir triangulo 
+    // const lado0 , inputValue0 = parseInt(document.getElementById("inputTriangulo0").value); //lado0
+    // const lado1 , inputValue1 = parseInt(document.getElementById("inputTriangulo1").value);// lado1
+    // const base , inputValue2 = parseInt(document.getElementById("inputTriangulo2").value);//base 
+    const respuestaTriangulo = document.getElementById("resultadosTriangulo");
+
+    const senoAngulo = lado1 / lado0; 
+    const altura = lado0 * senoAngulo;
+    return altura;
+    
+}
+
+
 //console.log("el area del triangulo es de : " + areaTriangulo + cm2);
 
 //console.groupEnd();
@@ -90,17 +105,19 @@ function areaCirculo(radio){
 
 function  calcularPerimetroCuadrado(){
     const inputValue = parseInt(document.getElementById("inputCuadrado").value);
-
+    const respuestaCuadrado = document.getElementById("resultadosCuadrado");
     const perimetro = perimetroCuadrado(inputValue);
-    alert(perimetro);
 
+    //alert(perimetro);
+    respuestaCuadrado.innerText = "el perimtro del cuadrado es de: " + perimetro;
 }
 
 function calcularAreaCuadrado(){
     const inputValue = parseInt(document.getElementById("inputCuadrado").value);
-
+    const respuestaCuadrado = document.getElementById("resultadosCuadrado");
     const area = areaCuadrado(inputValue);
-    alert(area);
+    //alert(area);
+    respuestaCuadrado.innerText = "el area del cuadrado es de: " + area;
 
 }
 //traingulo
@@ -108,36 +125,61 @@ function  calcularPerimetroTriangulo(){
     const inputValue0 = parseInt(document.getElementById("inputTriangulo0").value);
     const inputValue1 = parseInt(document.getElementById("inputTriangulo1").value);
     const inputValue2 = parseInt(document.getElementById("inputTriangulo2").value);
+    const respuestaTriangulo = document.getElementById("resultadosTriangulo");
 
     const perimetro = perimetroTriangulo(inputValue0, inputValue1, inputValue2);
-    alert(perimetro);
+    //alert(perimetro);
+    respuestaTriangulo.innerText = "el perimtro del triangulo es de: " + perimetro;
 
 }
 
 
 function  calcularAreaTriangulo(){
-    const inputValue2 = parseInt(document.getElementById("inputTriangulo2").value);
-    const inputValue3 = parseInt(document.getElementById("inputTriangulo3").value);
+   
+    //const inputValue3 = parseInt(document.getElementById("inputTriangulo3").value);
+    var inputValue0 , lado0 = parseInt(document.getElementById("inputTriangulo0").value); //lado0
+    var inputValue1 , lado1 = parseInt(document.getElementById("inputTriangulo1").value);// lado1
+    var inputValue2 , base = parseInt(document.getElementById("inputTriangulo2").value);//base 
+    
+    
+    if(inputValue2 >= inputValue1 && inputValue2 >= inputValue0){
+        
 
-    const area = areaTriangulo(inputValue2, inputValue3);
-    alert(area);
+    }else if(inputValue0 >= inputValue1){
+        inputValue0 = lado1;
+        inputValue1 = base;
+        inputValue2 = lado0;
+    }else{
+        inputValue0 = base;
+        inputValue1 = lado1;
+        inputValue2 = lado0;
+    }
+    const altura = alturaTriangulo(inputValue0, inputValue1) 
+    const respuestaTriangulo = document.getElementById("resultadosTriangulo");
 
+    const area = areaTriangulo(inputValue2, altura);
+    //alert(area);
+    respuestaTriangulo.innerText = "el area del triangulo es de: " + area;
 }
 
 //circulo 
 
 function  calcularPerimetroCirculo(){
     const inputValue = parseInt(document.getElementById("inputCirculo").value);
+    const respuestaCirculo = document.getElementById("resultadosCirculo");
 
     const perimetro = perimetroCirculo(inputValue);
-    alert(perimetro);
-
+    //alert(perimetro);
+    respuestaCirculo.innerText = "el perimetro del Circulo es de: " + perimetro;
 }
+
 
 function  calcularAreaCirculo(){
     const inputValue = parseInt(document.getElementById("inputCirculo").value);
+    const respuestaCirculo = document.getElementById("resultadosCirculo");
 
     const area = areaCirculo(inputValue);
-    alert(area);
+    //alert(area);
+    respuestaCirculo.innerText = "el area del Circulo es de: " + area;
 
 }
