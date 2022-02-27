@@ -1,5 +1,3 @@
-// helpers
-
 function esPar(numerito){
     return (numerito % 2 === 0);
 };
@@ -46,4 +44,16 @@ function medianaSalario(lista){
 
 
 //mediana top 10%
-console.log(medianaSalario(salariosColSorted));
+const top1 = 10;
+const spliceStar = (salariosColSorted.length * (100 - top1)/ 100);
+const spliceCount = salariosCol.length - spliceStar;
+
+const salariosColTop10 = salariosColSorted.splice(spliceStar, spliceCount);
+
+const medianaGeneralCol = medianaSalario(salariosColSorted);
+const medianaTop10Col = medianaSalario(salariosColTop10);
+
+console.log({
+    medianaGeneralCol, 
+    medianaTop10Col
+});
