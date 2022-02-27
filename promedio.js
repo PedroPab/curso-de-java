@@ -73,3 +73,17 @@ function calcularModa(lista){
     const moda = listaArray[listaArray.length - 1];
     return moda;
 }
+
+//media geometriaca
+
+//media = raisn V x * x** x* x* x* 
+
+function calculrMediaGeometrica(lista){
+
+    const multiplicados = lista.reduce(function (valorAcumulado = 0, nuevoElemento){
+        return valorAcumulado * nuevoElemento;
+    })
+
+    const mediaGeometrica = Math.pow(multiplicados, 1 / lista.length);
+    return mediaGeometrica
+}
